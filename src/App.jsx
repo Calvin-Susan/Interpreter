@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react"; 
 import "./styles.css"; // Make sure this matches your CSS file name!
 
 // Our hilarious data
@@ -209,7 +209,7 @@ function App() {
 
   return (
     <div className="interpreter-container">
-      <h1 class="title">The Agency Client Interpreter</h1>
+      <h1 className="title">The Agency Client Interpreter</h1>
       {feedbackPairs.map((pair) => (
         <div key={pair.id} className="pair-container">
           <ClientBubble
