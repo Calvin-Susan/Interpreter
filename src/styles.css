@@ -1,0 +1,114 @@
+/* Basic Reset & Body Style */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  margin: 0;
+  padding: 20px;
+  background-color: #181818; /* WhatsApp-ish background */
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Align container to top */
+  min-height: 100vh;
+}
+
+.interpreter-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 20px auto; /* Add some top margin */
+  padding: 20px;
+  background-color: transparent; /* Make container transparent */
+  /* Removed box-shadow and border-radius for full page feel */
+}
+
+h1 {
+  text-align: center;
+  color: #444;
+  margin-bottom: 40px;
+  font-weight: 500;
+}
+
+.pair-container {
+  margin-bottom: 15px;
+  display: flex; /* Use flexbox for alignment */
+  flex-direction: column; /* Stack bubbles vertically */
+}
+
+/* Bubble Styles */
+.bubble {
+  padding: 10px 15px;
+  border-radius: 18px; /* More rounded */
+  max-width: 85%; /* Slightly wider max */
+  margin-bottom: 8px;
+  line-height: 1.5;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08); /* Subtle shadow */
+  word-wrap: break-word; /* Prevent long words overflowing */
+}
+
+.client-bubble {
+  background-color: #fec200; /* Light green */
+  align-self: flex-start; /* Align to right */
+  cursor: pointer;
+  color: #181818;
+
+  /* Removed text-align: right; let content flow naturally */
+}
+.client-bubble:hover {
+  background-color: #ffca1d;
+}
+
+.translation-bubble {
+  background-color: #fff; /* White */
+  align-self: flex-end; /* Align to left */
+  color: #181818;
+}
+
+.typing-indicator {
+  background-color: #fff;
+  align-self: flex-end;
+
+  display: inline-block; /* Fit content */
+  padding: 12px 15px; /* Match bubble padding better */
+}
+
+/* Typing Animation - Updated */
+.typing-indicator span {
+  display: inline-block;
+  width: 6px; /* Keep size */
+  height: 6px;
+  background-color: #aaa;
+  border-radius: 50%;
+  margin: 0 2px; /* Keep spacing */
+  /* Use a new animation name and adjust timing */
+  animation: bounce 1.4s infinite ease-in-out;
+}
+
+/* Adjust delays slightly for a different rhythm */
+.typing-indicator span:nth-child(1) {
+  animation-delay: 0s;
+}
+.typing-indicator span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.typing-indicator span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+/* Replace the old @keyframes typing with @keyframes bounce */
+@keyframes bounce {
+  0%,
+  70%, /* Hold at bottom longer */
+  100% {
+    transform: translateY(0);
+    opacity: 0.5; /* Start/end slightly faded */
+  }
+  35% {
+    transform: translateY(-4px); /* Smaller, quicker bounce up */
+    opacity: 1;
+  }
+}
+
+.title {
+  color: white;
+  font-weight: bold;
+}
